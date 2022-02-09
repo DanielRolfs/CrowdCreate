@@ -1,4 +1,5 @@
-## Crowd Create is a platform to crowdinvest your time, skills and money & be rewardet by profit shares and more.
+## Crowd Create is a platform to crowdinvest your time, skills 
+## and money & be rewardet by profit shares and more.
 
 ![Mockup](https://github.com/DanielRolfs/media/blob/main/CrowdCreate/readme.gif?raw=true)
 
