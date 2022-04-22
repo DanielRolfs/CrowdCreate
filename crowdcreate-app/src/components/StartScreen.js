@@ -1,7 +1,7 @@
 function StartScreen() {
   return (
     <div className="StartScreen">
-      <div className="flex flex-col h-screen w-screen justify-center">
+      <div className="flex flex-col justify-center">
         
         <div className="flex justify-center">
            <img class="w-2/3 py-6" src="https://raw.githubusercontent.com/DanielRolfs/media/6e9fb86d795c84612fd947482646fc7fde0e716f/CrowdCreate/logo.svg" alt="logo"/>
