@@ -12,7 +12,7 @@ import Profile from './components/Profile';
 function App() {
   return (
     <div id="app" className="App w-screen h-screen sm:w-[390px] sm:h-[844px] flex justify-center items-center border-2">
-      <BrowserRouter>
+      <BrowserRouter className="">
         <Routes>
           <Route path="/" element={<StartScreen/>} />
           <Route path="/projectlist" element={<ProjectList/>} />

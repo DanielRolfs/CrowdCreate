@@ -5,7 +5,7 @@ import MainNavigate from "./MainNavigate";
 
 function Favourites() {
     return (
-      <div className="Favourites">
+      <div className="Favourites w-full">
         Favourites
 
         <Routes>

@@ -5,7 +5,7 @@ import MainNavigate from "./MainNavigate";
 
 function News() {
     return (
-      <div className="News">
+      <div className="News w-full">
         News
 
         <Routes>

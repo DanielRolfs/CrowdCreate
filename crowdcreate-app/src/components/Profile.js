@@ -5,7 +5,7 @@ import MainNavigate from "./MainNavigate";
 
 function Profile() {
     return (
-      <div className="Profile">
+      <div className="Profile w-full">
         Profile
 
         <Routes>
