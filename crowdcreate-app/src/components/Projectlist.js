@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 
 
-import { db } from "./firebase.config"
+import { db } from "./.firebase.config"
 import { useState, useEffect } from "react"
 import { 
   collection,
