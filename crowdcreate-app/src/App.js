@@ -7,7 +7,6 @@ import ProjectList from './components/Projectlist';
 import Favourites from './components/Favourites';
 import News from './components/News';
 import Profile from './components/Profile';
-/* import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'; */
 
 function App() {
   return (
