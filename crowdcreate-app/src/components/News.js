@@ -3,20 +3,17 @@ import { Route, Routes } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 
 
-
-function ProjectList() {
+function News() {
     return (
-      <div className="ProjectList">
-        Projectlist
+      <div className="News">
+        News
 
         <Routes>
           <Route path="" element={<MainNavigate/>} />
         </Routes>
-        
       </div>
-      
     );
   }
   
-  export default ProjectList;
+  export default News;
   

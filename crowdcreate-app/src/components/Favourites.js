@@ -3,20 +3,17 @@ import { Route, Routes } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 
 
-
-function ProjectList() {
+function Favourites() {
     return (
-      <div className="ProjectList">
-        Projectlist
+      <div className="Favourites">
+        Favourites
 
         <Routes>
           <Route path="" element={<MainNavigate/>} />
         </Routes>
-        
       </div>
-      
     );
   }
   
-  export default ProjectList;
+  export default Favourites;
   

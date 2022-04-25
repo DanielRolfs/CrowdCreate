@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom"
+
 function StartScreen() {
+  const navigate = useNavigate()
+
   return (
     <div className="StartScreen">
       <div className="flex flex-col justify-center">
@@ -25,7 +29,9 @@ function StartScreen() {
 
       <div className="flex justify-center pt-16">
         <div class="rounded-md shadow">
-            <a href="" class=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#00C500] hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">Join the movement</a>
+          <button onClick={() => navigate('/projectlist')}>
+            <a href="" class=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-[#00C500] bg-[#ff9b1f] md:py-4 md:text-lg md:px-10">Join the movement</a>
+          </button>
         </div>
         </div>
         
