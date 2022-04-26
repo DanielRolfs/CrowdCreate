@@ -8,7 +8,7 @@ function StartScreen() {
       <div className="flex flex-col justify-center">
         
         <div className="flex justify-center">
-           <img class="w-2/3 py-6" src="https://raw.githubusercontent.com/DanielRolfs/media/6e9fb86d795c84612fd947482646fc7fde0e716f/CrowdCreate/logo.svg" alt="logo"/>
+           <img classname="w-2/3 py-6" src="https://raw.githubusercontent.com/DanielRolfs/media/6e9fb86d795c84612fd947482646fc7fde0e716f/CrowdCreate/logo.svg" alt="logo"/>
         </div>
         
         <div className="py-6 flex justify-center">
@@ -28,9 +28,9 @@ function StartScreen() {
         </div>
 
       <div className="flex justify-center pt-16">
-        <div class="rounded-md shadow">
+        <div classname="rounded-md shadow">
           <button onClick={() => navigate('/projectlist')}>
-            <a href="" class=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-[#00C500] bg-[#ff9b1f] md:py-4 md:text-lg md:px-10">Join the movement</a>
+            <a href="" classname=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-[#00C500] bg-[#ff9b1f] md:py-4 md:text-lg md:px-10">Join the movement</a>
           </button>
         </div>
         </div>
