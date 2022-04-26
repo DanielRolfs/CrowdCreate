@@ -129,7 +129,12 @@ function ProjectList() {
         
         {createProjectActive && <div className="createProjectPopup w-screen h-screen sm:w-[390px] sm:h-[844px] fixed bg-white">
             <div className="popup-inner">
-              <h2>Create Project</h2>
+              <div className="header h-14 border-b-2 flex items-center flex justify-end">
+                <h1 className="flex-auto text-3xl">Create Project</h1>
+                <div className="fixed w-12 text-lg">
+                <button type="button" onClick={() => setCreateProjectActive(false)}>X</button>
+                </div>
+              </div>
 
               <form onSubmit={handleSubmit}>
                 
@@ -171,7 +176,7 @@ function ProjectList() {
 
               <div className="buttons">
                 <button type="submit">Submit</button>
-                <button type="button" onClick={() => setCreateProjectActive(false)}>Close</button>
+                {/* <button type="button" onClick={() => setCreateProjectActive(false)}>Close</button> */}
               </div>
 
               </form>
