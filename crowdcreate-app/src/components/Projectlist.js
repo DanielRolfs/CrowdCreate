@@ -41,8 +41,7 @@ function ProjectList() {
 
       if (
         !form.title ||
-        !form.shortDescription ||
-        !form.category
+        !form.shortDescription
       ) {
         alert("Please fill out all fields")
         return
@@ -70,7 +69,7 @@ function ProjectList() {
       })
     }
 
-    const handleCategorycount = () => {
+    const handleCategoryCount = () => {
       setForm({
         ...form, 
         category: [...form.category, ""]})
@@ -92,12 +91,12 @@ function ProjectList() {
             </div>
         </div>
           
-        <div className="project flex-auto my-2 mx-2">
+        <div className="mainArea flex-auto mx-2 overflow-auto">
           {/* Project List */}
 
-          <div className="projects">
+          <div className="projects py-2">
             { projects.map((project, i) => (
-                <div key={project.id} className="project flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div key={project.id} className="project flex flex-col rounded-lg shadow-md overflow-hidden mb-4">
                   <div className="flex-shrink-0">
                     <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="test"/>
                   </div>
@@ -167,7 +166,7 @@ function ProjectList() {
                     />
                   ))
                 }
-                <button type="button" onClick={handleCategorycount}>Add Category</button>
+                <button type="button" onClick={handleCategoryCount}>Add Category</button>
               </div> */}
 
               <div className="buttons">
