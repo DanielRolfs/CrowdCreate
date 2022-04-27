@@ -7,6 +7,7 @@ import ProjectList from './components/Projectlist';
 import Favourites from './components/Favourites';
 import News from './components/News';
 import Profile from './components/Profile';
+import Project from './components/Project/Project';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartScreen/>} />
           <Route path="/projectlist" element={<ProjectList/>} />
+          <Route path="/project/:id/*" element={<Project />} />
           <Route path="/favourites" element={<Favourites/>} />
           <Route path="/news" element={<News/>} />
           <Route path="/profile" element={<Profile/>} />

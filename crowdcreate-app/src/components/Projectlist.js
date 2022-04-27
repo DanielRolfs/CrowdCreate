@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, Link } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 
 
@@ -83,7 +83,7 @@ function ProjectList() {
     return (
       <div className="ProjectList w-full h-full flex flex-col">
          
-        {/* Headline */} 
+        {/* Head Area */} 
         <div className="header h-14 border-b-2 flex items-center flex justify-end">
           <h1 className="flex-auto text-3xl">Projectlist</h1>
           <div className="fixed w-12 text-2xl">
@@ -91,42 +91,48 @@ function ProjectList() {
             </div>
         </div>
           
+        {/* Main Area */}
         <div className="mainArea flex-auto mx-2 overflow-auto">
+          
           {/* Project List */}
-
           <div className="projects py-2">
             { projects.map((project, i) => (
+
+                /* Project */
                 <div key={project.id} className="project flex flex-col rounded-lg shadow-md overflow-hidden mb-4">
-                  <div className="flex-shrink-0">
-                    <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="test"/>
-                  </div>
-                  <div className="flex-1 bg-white p-2 flex flex-col justify-between">
-                    <div className="flex-1">
-
-                        <p className="text-2xl font-semibold text-gray-900">{project.title}</p>
-                        <p className="text-lg text-gray-900">{project.shortDescription}</p>
-                        {/* <ul>
-                          { project.category.map((category, i) => (
-                            <li key={1}>{ category }</li>
-                          ))}
-                        </ul> */}
-
+                  <Link to={`/project/${project.id}`}>
+                    <div className="flex-shrink-0">
+                      <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="test"/>
                     </div>
-                  <button className="removeProject" onClick={() => removeProject(project.id)}>X</button>
-                  </div>
+                    <div className="flex-1 bg-white p-2 flex flex-col justify-between">
+                      <div className="flex-1">
+
+                          <p className="text-2xl font-semibold text-gray-900">{project.title}</p>
+                          <p className="text-lg text-gray-900">{project.shortDescription}</p>
+                          {/* <ul>
+                            { project.category.map((category, i) => (
+                              <li key={1}>{ category }</li>
+                            ))}
+                          </ul> */}
+
+                      </div>
+                      <button className="removeProject" onClick={() => removeProject(project.id)}>X</button>
+                    </div>
+                  </Link>
                 </div>
             ))}
           </div>
          
         </div>
 
-        {/* Main Navigation */}
+        {/* Navigation Area */}
         <div>
           <Routes>
             <Route path="" element={<MainNavigate/>} />
           </Routes>
         </div>
         
+        {/* Create Project Popup */}
         {createProjectActive && <div className="createProjectPopup w-screen h-screen sm:w-[390px] sm:h-[844px] fixed bg-white">
             <div className="popup-inner">
               <div className="header h-14 border-b-2 flex items-center flex justify-end">
