@@ -84,7 +84,7 @@ function ProjectList() {
       <div className="ProjectList w-full h-full flex flex-col">
          
         {/* Head Area */} 
-        <div className="header h-14 border-b-2 flex items-center flex justify-end">
+        <div className="header h-14 border-b-2 flex items-center justify-end">
           <h1 className="flex-auto text-3xl">Projectlist</h1>
           <div className="fixed w-12 text-2xl">
             <button onClick={() => setCreateProjectActive(!createProjectActive)} className="">+</button>
@@ -105,7 +105,7 @@ function ProjectList() {
                       <button className="removeProject text-white" onClick={() => removeProject(project.id)}>X</button>
                       <button className="removeProject"><img src="https://img.icons8.com/ios/50/000000/like--v1.png" /></button>
                   </div>
-                  <Link to={`/project/${project.id}`} data={projects}>
+                  <Link to={`/project/${project.id}`} state={project}>
                     <div className="flex-1 bg-white p-2 flex flex-col justify-between">
                       <div className="flex-1">
 
@@ -163,6 +163,16 @@ function ProjectList() {
                   type="text"
                   value={form.shortDescription}
                   onChange={e => setForm({ ...form, shortDescription: e.target.value })}
+                  className="border-2"
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Long Description</label>
+                <textarea
+                  type="text"
+                  value={form.longDescription}
+                  onChange={e => setForm({ ...form, longDescription: e.target.value })}
                   className="border-2"
                 />
               </div>
