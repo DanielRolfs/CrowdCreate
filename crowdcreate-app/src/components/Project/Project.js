@@ -17,11 +17,11 @@ function Project({projects}) {
     
 
     return (
-        <div className="Project w-full">
+        <div className="Project w-full h-full flex flex-col">
             {/* {id} */}
 
             {/* Head Area */}
-            <div className="header h-14 border-b-2 flex items-center flex justify-start">
+            <div className="header h-14 border-b-2 flex items-center flex-none justify-start">
                 <h1 className="flex-auto text-3xl">{projectdata.state.title}</h1>
                 <div className="fixed w-12 text-2xl">
                     <Link to={`/projectlist`}>
@@ -35,7 +35,7 @@ function Project({projects}) {
           
 
 
-
+            <div className="grow">
             <Tab.Group>
                 <Tab.List className="flex between devide-x w-full justify-center">
                     <div><Tab className="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-sm font-medium text-center hover:bg-gray-50 focus:z-10">Info</Tab></div>
@@ -43,17 +43,19 @@ function Project({projects}) {
                     <div><Tab className="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-sm font-medium text-center hover:bg-gray-50 focus:z-10">Team</Tab></div>
                     <div><Tab className="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-sm font-medium text-center hover:bg-gray-50 focus:z-10">Work</Tab></div>
                 </Tab.List>
-                <Tab.Panels>
-                    <Tab.Panel> <div>
-                        <h2>Info</h2>
-                        {projectdata.state.longDescription}
-                    </div></Tab.Panel>
+                <Tab.Panels className="flex-1 mt-2">
+                    <Tab.Panel> 
+                        <div>
+                            <h2 className="font-bold">Info</h2>
+                            <div className="mt-4">{projectdata.state.longDescription}</div>
+                            </div>
+                    </Tab.Panel>
                     <Tab.Panel><h2>Market</h2></Tab.Panel>
                     <Tab.Panel><h2>Team</h2></Tab.Panel>
                     <Tab.Panel><h2>Work</h2></Tab.Panel>
                 </Tab.Panels>
             </Tab.Group>
-            
+            </div>
 
             
 
