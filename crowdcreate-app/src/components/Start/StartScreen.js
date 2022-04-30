@@ -7,9 +7,9 @@ function StartScreen() {
     <div className="StartScreen">
       <div className="flex flex-col justify-center">
         
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
            <img classname="w-2/3 py-6" src="https://raw.githubusercontent.com/DanielRolfs/media/6e9fb86d795c84612fd947482646fc7fde0e716f/CrowdCreate/logo.svg" alt="logo"/>
-        </div>
+        </div> 
         
         <div className="py-6 flex justify-center">
            <div className="w-3/4">
@@ -26,6 +26,7 @@ function StartScreen() {
               & get <a href="" className="text-[#00C500]">fairly</a> rewardet</h2>
            </div>
         </div>
+        */}
 
       <div className="flex justify-center pt-16">
         <div classname="rounded-md shadow">

@@ -58,7 +58,7 @@ function ProjectList() {
       setCreateProjectActive(false)
     }
 
-    const handleCategory = (e, i) => {
+    /* const handleCategory = (e, i) => {
       const categoryClone = [...form.category]
 
       categoryClone[i] = e.target.vl
@@ -74,7 +74,7 @@ function ProjectList() {
         ...form, 
         category: [...form.category, ""]})
     }
-
+ */
     const removeProject = id => {
       deleteDoc(doc(db, "projects", id))
     }
@@ -100,10 +100,12 @@ function ProjectList() {
 
                 /* Project */
                 <div key={project.id} className="project flex flex-col rounded-lg shadow-md overflow-hidden mb-4">
-                  <Link to={`/project/${project.id}`}>
-                    <div className="flex-shrink-0">
-                      <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="test"/>
-                    </div>
+                  
+                  <div className="flex flex-shrink-0 h-48 w-full justify-between items-start p-4 bg-cover bg-[url('https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80')]">
+                      <button className="removeProject text-white" onClick={() => removeProject(project.id)}>X</button>
+                      <button className="removeProject"><img src="https://img.icons8.com/ios/50/000000/like--v1.png" /></button>
+                  </div>
+                  <Link to={`/project/${project.id}`} data={projects}>
                     <div className="flex-1 bg-white p-2 flex flex-col justify-between">
                       <div className="flex-1">
 
@@ -116,9 +118,10 @@ function ProjectList() {
                           </ul> */}
 
                       </div>
-                      <button className="removeProject" onClick={() => removeProject(project.id)}>X</button>
-                    </div>
+                  </div>
                   </Link>
+                    
+                  
                 </div>
             ))}
           </div>
