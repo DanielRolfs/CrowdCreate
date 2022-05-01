@@ -5,12 +5,16 @@ import MainNavigate from "./MainNavigate";
 
 function News() {
     return (
-      <div className="News w-full">
-        News
+      <div className="News w-full h-full flex flex-col">
+        <div className="grow">
+         News
+        </div>
 
-        <Routes>
-          <Route path="" element={<MainNavigate/>} />
-        </Routes>
+        <div>
+          <Routes>
+            <Route path="" element={<MainNavigate/>} />
+          </Routes>
+        </div>
       </div>
     );
   }

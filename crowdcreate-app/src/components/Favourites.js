@@ -5,12 +5,16 @@ import MainNavigate from "./MainNavigate";
 
 function Favourites() {
     return (
-      <div className="Favourites w-full">
-        Favourites
+      <div className="Favourites w-full h-full flex flex-col">
+        <div className="grow">
+          Favourites
+        </div>
 
-        <Routes>
-          <Route path="" element={<MainNavigate/>} />
-        </Routes>
+        <div>
+          <Routes>
+            <Route path="" element={<MainNavigate/>} />
+          </Routes>
+        </div>
       </div>
     );
   }
