@@ -2,7 +2,7 @@ import { Route, Routes, Link } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 
 
-import { db } from "./.firebase.config"
+import { db, storage } from "../.firebase.config"
 import { useState, useEffect } from "react"
 import { 
   collection,
@@ -12,7 +12,6 @@ import {
   deleteDoc
 } from "firebase/firestore"
 
-import { storage } from "./.firebase.config"
 import { ref, uploadBytes } from "firebase/storage"
 import { v4 } from "uuid"
 
