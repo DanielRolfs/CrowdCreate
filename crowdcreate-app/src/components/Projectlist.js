@@ -12,6 +12,10 @@ import {
   deleteDoc
 } from "firebase/firestore"
 
+import { storage } from "./.firebase.config"
+import { ref, uploadBytes } from "firebase/storage"
+import { v4 } from "uuid"
+
 
 function ProjectList() {
     const [projects, setProjects] = useState([])
@@ -80,6 +84,19 @@ function ProjectList() {
     }
 
 
+    const [imageUpload, setImageUpload] = useState(null, "images")
+    const uploadImage = () => {
+        if (imageUpload == null) return;
+        const imageRef = ref(storage, `projectsImages/${imageUpload.name + v4()}`)
+        uploadImage(imageRef, imageUpload).then(() => {
+          alert("image upload successful")
+        })
+    }
+
+
+
+
+
     return (
       <div className="ProjectList w-full h-full flex flex-col">
          
@@ -145,8 +162,15 @@ function ProjectList() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              
                 
+                <div>
+                   <input type="file" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
+                   <button onClick={uploadImage}>Upload image</button>
+                </div>
+
+            <form onSubmit={handleSubmit}>
+
                 <div className="form-group">
                   <label>Title</label>
                   <input 
