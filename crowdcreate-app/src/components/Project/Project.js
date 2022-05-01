@@ -25,7 +25,7 @@ function Project({ projects }) {
                 <h1 className="flex-auto text-3xl">{projectdata.state.title}</h1>
                 <div className="fixed w-12 text-2xl">
                     <Link to={`/projectlist`}>
-                        <button>{/* <img src="https://img.icons8.com/ios-glyphs/30/000000/back.png" /> */}</button>
+                        <button><img src="https://img.icons8.com/ios-glyphs/30/000000/back.png" /></button>
                     </Link>
                 </div>
             </div>
