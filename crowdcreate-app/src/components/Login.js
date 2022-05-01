@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom"
+/* import { useState } from "react"
+
+const [loginEmail, setLoginEmail] = useState("")
+const [loginPassword, setLoginPassword] = useState("")
+
+const login = async () => {
+
+} */
 
 function Login() {
   return (
