@@ -30,7 +30,7 @@ function StartScreen() {
 
       <div className="flex justify-center pt-16">
         <div classname="rounded-md shadow">
-          <button onClick={() => navigate('/projectlist')}>
+          <button onClick={() => navigate('/login')}>
               <a href="" classname=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-[#00C500] bg-[#ff9b1f] md:py-4 md:text-lg md:px-10">Join the movement</a>
           </button>
         </div>
