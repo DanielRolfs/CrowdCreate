@@ -1,5 +1,6 @@
 import { Route, Routes, Link } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
+import MainHeader from "./Elements/mainHeader";
 
 
 import { db, storage } from "../.firebase.config"
@@ -100,12 +101,14 @@ function ProjectList() {
       <div className="ProjectList w-full h-full flex flex-col">
          
         {/* Head Area */} 
-        <div className="header h-14 border-b-2 flex items-center justify-end">
-          <h1 className="flex-auto text-3xl">Projectlist</h1>
-          <div className="fixed w-12 text-2xl">
+        <MainHeader headline="Project List">
+          <div className=" w-12 text-2xl absolute left-0">
+            
+          </div>
+          <div className=" w-12 text-2xl absolute right-0">
             <button onClick={() => setCreateProjectActive(!createProjectActive)} className="">+</button>
-            </div>
-        </div>
+          </div>
+        </MainHeader>
           
         {/* Main Area */}
         <div className="mainArea flex-auto mx-2 overflow-auto">
