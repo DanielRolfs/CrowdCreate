@@ -1,5 +1,6 @@
 import { useParams, useLocation, Link } from "react-router-dom"
 import { Tab } from '@headlessui/react'
+import MainHeader from "../Elements/mainHeader";
 
 
 
@@ -21,15 +22,15 @@ function Project({ projects }) {
             {/* {id} */}
 
             {/* Head Area */}
-            <div className="header h-14 flex items-center flex-none justify-start">
-                <h1 className="flex-auto text-3xl">{projectdata.state.title}</h1>
-                <div className="fixed w-12 text-2xl">
+            <MainHeader headline={projectdata.state.title}>
+                <div className=" w-12 text-2xl absolute left-0">
                     <Link to={`/projectlist`}>
                         <button><img src="https://img.icons8.com/ios-glyphs/30/000000/back.png" /></button>
                     </Link>
                 </div>
-            </div>
-
+                <div className=" w-12 text-2xl absolute right-0">
+                </div>
+            </MainHeader>
 
 
 
