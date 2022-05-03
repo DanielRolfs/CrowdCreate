@@ -1,6 +1,7 @@
 import { useParams, useLocation, Link } from "react-router-dom"
 import { Tab } from '@headlessui/react'
 import MainHeader from "../Elements/mainHeader";
+import Tasks from "./Tasks";
 
 
 
@@ -42,7 +43,7 @@ function Project({ projects }) {
                         <div><Tab className="border border-black text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Info</Tab></div>
                         <div><Tab className="border border-black text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Market</Tab></div>
                         <div><Tab className="border border-black text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Team</Tab></div>
-                        <div><Tab className="border border-black text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Work</Tab></div>
+                        <div><Tab className="border border-black text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Tasks</Tab></div>
                     </Tab.List>
                     <Tab.Panels className="flex-1 mt-2">
                         <Tab.Panel>
@@ -53,7 +54,7 @@ function Project({ projects }) {
                         </Tab.Panel>
                         <Tab.Panel><h2>Market</h2></Tab.Panel>
                         <Tab.Panel><h2>Team</h2></Tab.Panel>
-                        <Tab.Panel><h2>Work</h2></Tab.Panel>
+                        <Tab.Panel><h2><Tasks/></h2></Tab.Panel>
                     </Tab.Panels>
                 </Tab.Group>
             </div>
