@@ -7,6 +7,7 @@ import {
     onSnapshot,
     query,
     orderBy,
+    where,
     doc,
     addDoc,
     deleteDoc
@@ -18,8 +19,8 @@ function Tasks() {
 
     const tasksCollectionRef = collection(db, "tasks")
      useEffect(() => {
-     
-        const q = query(tasksCollectionRef, orderBy("taskName", "asc"))
+        console.log("id",id)
+         const q = query(tasksCollectionRef, where("project", "==", id))
 
          const unsub = onSnapshot(q, snapshot => {
              setTasks(snapshot.docs.map(doc => {
