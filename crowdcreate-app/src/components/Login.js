@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../.firebase.config"
 
 function Login() {
 
+  const navigate = useNavigate()
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
 
@@ -15,6 +16,7 @@ function Login() {
         loginEmail,
         loginPassword
         );
+        navigate('/projectlist')
       console.log(user)
     } catch (error) {
       console.log(error.message);
