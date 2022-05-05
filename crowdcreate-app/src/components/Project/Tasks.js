@@ -43,12 +43,10 @@ function Tasks() {
             })) */
         })
     }, []) 
-    console.log("Tasks",tasksCollectionRef)
     
 
     return (
         <div>
-            Tasks ohh yess
             {id}
             <div>
                 { tasks.map((task, i) => (
