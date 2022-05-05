@@ -14,7 +14,7 @@ function Project({ projects }) {
         return classes.filter(Boolean).join(' ')
     }
     
-    const [currentTab, setCurrentTab] = useState("")
+    const [currentTab, setCurrentTab] = useState("0")
 
 
 /*     console.log("data", projectdata) */
@@ -34,10 +34,16 @@ function Project({ projects }) {
                 </div>
                 <div className=" w-12 text-2xl absolute right-0">
                     {console.log('Changed selected tab to:', currentTab)}
-                    {currentTab == '0' && <div>I</div>}
-                    {currentTab == '1' && <div>M</div>}
+                    {currentTab == '0' && 
+                        <button /* onClick={() => setCreateProjectActive(!createProjectActive)} */ className=""><img src="https://img.icons8.com/ios-glyphs/30/000000/share-rounded.png" /> </button>
+                    }
+                    {currentTab == '1' && 
+                        <div>M</div>
+                    }
                     {currentTab == '2' && <div>Te</div>}
-                    {currentTab == '3' && <div>Ta</div>}
+                    {currentTab == '3' && 
+                        <button /* onClick={() => setCreateProjectActive(!createProjectActive)} */ className="">+</button>
+                    }
                 </div>
             </MainHeader>
 
