@@ -5,6 +5,8 @@ import { useState, useEffect } from "react"
 import {
     collection,
     onSnapshot,
+    query,
+    orderBy,
     doc,
     addDoc,
     deleteDoc
@@ -16,14 +18,28 @@ function Tasks() {
 
     const tasksCollectionRef = collection(db, "tasks")
      useEffect(() => {
-        onSnapshot(tasksCollectionRef, snapshot => {
+     
+        const q = query(tasksCollectionRef, orderBy("taskName", "asc"))
+
+         const unsub = onSnapshot(q, snapshot => {
+             setTasks(snapshot.docs.map(doc => {
+                 return {
+                     id: doc.id,
+                     viewing: false,
+                     ...doc.data()
+                 }
+             }))
+     
+        return unsub;
+     
+        /*   onSnapshot(tasksCollectionRef, snapshot => {
             setTasks(snapshot.docs.map(doc => {
                 return {
                     id: doc.id,
                     viewing: false,
                     ...doc.data()
                 }
-            }))
+            })) */
         })
     }, []) 
     console.log("Tasks",tasksCollectionRef)
