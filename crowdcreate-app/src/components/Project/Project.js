@@ -2,6 +2,7 @@ import { useParams, useLocation, Link } from "react-router-dom"
 import { Tab } from '@headlessui/react'
 import MainHeader from "../Elements/mainHeader";
 import Tasks from "./Tasks";
+import { useState } from "react"
 
 
 
@@ -12,10 +13,12 @@ function Project({ projects }) {
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
+    
+    const [currentTab, setCurrentTab] = useState("")
 
 
+/*     console.log("data", projectdata) */
 
-    console.log("data", projectdata)
 
 
     return (
@@ -30,15 +33,22 @@ function Project({ projects }) {
                     </Link>
                 </div>
                 <div className=" w-12 text-2xl absolute right-0">
+                    {console.log('Changed selected tab to:', currentTab)}
+                    {currentTab == '0' && <div>I</div>}
+                    {currentTab == '1' && <div>M</div>}
+                    {currentTab == '2' && <div>Te</div>}
+                    {currentTab == '3' && <div>Ta</div>}
                 </div>
             </MainHeader>
 
-
+            
 
 
 
             <div className="grow">
-                <Tab.Group>
+                <Tab.Group
+                    onChange={(index) => { setCurrentTab(index) }}
+               >
                     <Tab.List className="flex between devide-x w-full justify-center border-collapse">
                         <div><Tab className="border border-black text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Info</Tab></div>
                         <div><Tab className="border border-black text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-1 px-4 text-sm font-medium text-center hover:bg-gray-200 focus:z-10">Market</Tab></div>
