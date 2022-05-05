@@ -3,6 +3,14 @@ import { Tab } from '@headlessui/react'
 import MainHeader from "../Elements/mainHeader";
 import Tasks from "./Tasks";
 import { useState } from "react"
+import { db } from "../../.firebase.config"
+import {
+    collection,
+    onSnapshot,
+    doc,
+    addDoc,
+    deleteDoc
+} from "firebase/firestore"
 
 
 
@@ -15,10 +23,37 @@ function Project({ projects }) {
     }
     
     const [currentTab, setCurrentTab] = useState("0")
-
+    const [createTaskActive, setCreateTaskActive] = useState(false)
+    console.log("Status", createTaskActive)
 
 /*     console.log("data", projectdata) */
 
+
+    const [form, setForm] = useState({
+        project: id,
+        taskName: "",
+    })
+
+    const tasksCollectionRef = collection(db, "tasks")
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        if (
+            !form.taskName
+        ) {
+            alert("Please fill out all fields")
+            return
+        }
+
+        addDoc(tasksCollectionRef, form)
+
+        setForm({
+            taskName: "",
+        })
+
+
+        setCreateTaskActive(false)
+    }
 
 
     return (
@@ -33,7 +68,7 @@ function Project({ projects }) {
                     </Link>
                 </div>
                 <div className=" w-12 text-2xl absolute right-0">
-                    {console.log('Changed selected tab to:', currentTab)}
+                   {/*  {console.log('Changed selected tab to:', currentTab)} */}
                     {currentTab == '0' && 
                         <button /* onClick={() => setCreateProjectActive(!createProjectActive)} */ className=""><img src="https://img.icons8.com/ios-glyphs/30/000000/share-rounded.png" /> </button>
                     }
@@ -42,7 +77,7 @@ function Project({ projects }) {
                     }
                     {currentTab == '2' && <div>Te</div>}
                     {currentTab == '3' && 
-                        <button /* onClick={() => setCreateProjectActive(!createProjectActive)} */ className="">+</button>
+                        <button onClick={() => setCreateTaskActive(!createTaskActive)} className="">+</button>
                     }
                 </div>
             </MainHeader>
@@ -70,13 +105,43 @@ function Project({ projects }) {
                         </Tab.Panel>
                         <Tab.Panel><h2>Market</h2></Tab.Panel>
                         <Tab.Panel><h2>Team</h2></Tab.Panel>
-                        <Tab.Panel><h2><Tasks/></h2></Tab.Panel>
+                        <Tab.Panel><h2><Tasks createTaskActive={createTaskActive} onCreateTaskChange={setCreateTaskActive}/></h2></Tab.Panel>
                     </Tab.Panels>
                 </Tab.Group>
             </div>
 
 
+            {/* Create Add Task Popup */}
+            {createTaskActive && <div className="createProjectPopup w-screen h-screen sm:w-[390px] sm:h-[844px] fixed bg-white">
+                <div className="popup-inner">
+                    <div className="header h-14 border-b-2 flex items-center flex justify-end">
+                        <h1 className="flex-auto text-3xl">Create Task</h1>
+                        <div className="fixed w-12 text-lg">
+                            <button type="button" onClick={() => setCreateTaskActive(false)}>X</button>
+                        </div>
+                    </div>
 
+                    <form onSubmit={handleSubmit}>
+
+                        <div className="form-group">
+                            <label>Task Name</label>
+                            <textarea
+                                type="text"
+                                value={form.taskName}
+                                onChange={e => setForm({ ...form, taskName: e.target.value })}
+                                className="border-2"
+                            />
+                        </div>
+
+                        <div className="buttons">
+                            <button type="submit">Submit</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>}
 
         </div>
     );
