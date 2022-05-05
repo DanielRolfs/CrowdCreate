@@ -10,8 +10,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Account from './components/Account';
 import PasswordReset from './components/PasswordReset';
-import ProtectedRoutes from './ProtectedRoutes'
-
+import ProtectedRoutes from './ProtectedRoutes';
+import UnProtectedRoutes from './UnProtectedRoutes';
 
 function App() {
   
@@ -20,9 +20,11 @@ function App() {
     <div id="app" className="App w-screen h-screen sm:w-[390px] sm:h-[844px] flex justify-center items-center border-2">
       <BrowserRouter className="">
         <Routes>
-          <Route path="/" element={<StartScreen/>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route element={<UnProtectedRoutes />}>
+            <Route path="/" element={<StartScreen/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
           <Route element={<ProtectedRoutes />}>
             <Route path="/projectlist/*" element={<ProjectList/>} />
             <Route path="/project/:id/*" element={<Project />} />
