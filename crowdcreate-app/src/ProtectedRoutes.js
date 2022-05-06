@@ -2,7 +2,7 @@ import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./.firebase.config"
 import { useState } from "react"
 import { Navigate, Outlet } from 'react-router-dom'
-
+import { useLocation } from "react-router"
 
 
 function ProtectedRoutes() {
@@ -13,9 +13,10 @@ function ProtectedRoutes() {
         setUser(currentUser);
     })
 
+/*     const location = useLocation() */
     
     return (
-        user ? <Outlet /> : <Navigate to="/login" />
+        user ? <Outlet /> : <Navigate to="/login" /* replace state={{from: location}} */ />
     )
 
 

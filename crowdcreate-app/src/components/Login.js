@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../.firebase.config"
@@ -9,6 +9,8 @@ function Login() {
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
 
+/*   const location = useLocation() */
+
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(
@@ -18,7 +20,16 @@ function Login() {
         );
         navigate('/projectlist')
       console.log(user)
+<<<<<<< HEAD
       console.log(user.user.uid)
+=======
+/*       if (user) {
+        if (location.state.from) {
+          console.log(location.state.from)
+          navigate(location.state.from)
+        } 
+      }*/
+>>>>>>> main
     } catch (error) {
       console.log(error.message);
       alert(error.message);
@@ -39,14 +50,14 @@ function Login() {
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           
             <div>
-              <label for="email" className="block text-sm font-medium text-gray-700"> Email address </label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700"> Email address </label>
               <div className="mt-1">
                 <input onChange={(event) => { setLoginEmail(event.target.value) }} id="email" name="email" type="email" autoComplete="email" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
               </div>
             </div>
 
             <div>
-              <label for="password" className="block text-sm font-medium text-gray-700"> Password </label>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700"> Password </label>
               <div className="mt-1">
                 <input onChange={(event) => { setLoginPassword(event.target.value) }} id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
               </div>

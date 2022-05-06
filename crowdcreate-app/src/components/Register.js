@@ -27,6 +27,11 @@ function Register() {
     setUser(currentUser);
   })
 
+  const logout = async () => {
+
+    await signOut(auth)
+  }
+
   const register = async () => {
       try {
         const user = await createUserWithEmailAndPassword(
@@ -34,6 +39,7 @@ function Register() {
           registerEmail, 
           registerPassword);
         console.log(user)
+<<<<<<< HEAD
         /* signOut(auth)  */
         console.log(user.user.uid)
 
@@ -54,6 +60,9 @@ function Register() {
         }
 
 
+=======
+        logout()
+>>>>>>> main
       } catch (error) {
         console.log(error.message);
       }
