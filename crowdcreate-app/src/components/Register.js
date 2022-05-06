@@ -41,7 +41,7 @@ function Register() {
         /* Write new registered person in user database */
       
 
-        const userCollectionRef = collection(db, "tasks")
+        const userCollectionRef = collection(db, "users")
         const handleSubmit = e => {
           e.preventDefault()
 

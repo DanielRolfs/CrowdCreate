@@ -32,7 +32,7 @@ function Login() {
       </div>
       <div className="text-sm">
         <Link to={`/register`}>
-          <a href="#" className="font-medium text-black hover:text-orange-500"> Don´t have an account yet?</a>
+          <span className="font-medium text-black hover:text-orange-500"> Don´t have an account yet?</span>
         </Link>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -60,7 +60,7 @@ function Login() {
 
               <div className="text-sm">
                 <Link to={`/passwordreset`}>
-                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
+                  <span className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </span>
                 </Link>
               </div>
             </div>
