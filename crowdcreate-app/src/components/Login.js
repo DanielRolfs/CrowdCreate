@@ -20,14 +20,19 @@ function Login() {
         );
         navigate('/projectlist')
       console.log(user)
+<<<<<<< HEAD
+      console.log(user.user.uid)
+=======
 /*       if (user) {
         if (location.state.from) {
           console.log(location.state.from)
           navigate(location.state.from)
         } 
       }*/
+>>>>>>> main
     } catch (error) {
       console.log(error.message);
+      alert(error.message);
     }
   }
 
@@ -38,7 +43,7 @@ function Login() {
       </div>
       <div className="text-sm">
         <Link to={`/register`}>
-          <a href="#" className="font-medium text-black hover:text-orange-500"> Don´t have an account yet?</a>
+          <span className="font-medium text-black hover:text-orange-500"> Don´t have an account yet?</span>
         </Link>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">

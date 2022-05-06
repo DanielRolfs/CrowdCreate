@@ -48,6 +48,7 @@ function Project({ projects }) {
         addDoc(tasksCollectionRef, form)
 
         setForm({
+            project: id,
             taskName: "",
         })
 
