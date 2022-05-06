@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
 import { auth } from "../.firebase.config"
 import { useState } from "react"
+import { signOut } from "firebase/auth";
 
 function Register() {
 
@@ -21,6 +22,7 @@ function Register() {
           registerEmail, 
           registerPassword);
         console.log(user)
+        /* signOut(auth)  */
       } catch (error) {
         console.log(error.message);
       }
