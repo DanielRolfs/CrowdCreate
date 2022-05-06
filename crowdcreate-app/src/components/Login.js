@@ -9,7 +9,7 @@ function Login() {
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
 
-  const location = useLocation()
+/*   const location = useLocation() */
 
   const login = async () => {
     try {

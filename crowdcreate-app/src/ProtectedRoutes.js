@@ -13,7 +13,7 @@ function ProtectedRoutes() {
         setUser(currentUser);
     })
 
-    const location = useLocation()
+/*     const location = useLocation() */
     
     return (
         user ? <Outlet /> : <Navigate to="/login" /* replace state={{from: location}} */ />
