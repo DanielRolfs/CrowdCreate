@@ -18,8 +18,10 @@ function Login() {
         );
         navigate('/projectlist')
       console.log(user)
+      console.log(user.user.uid)
     } catch (error) {
       console.log(error.message);
+      alert(error.message);
     }
   }
 

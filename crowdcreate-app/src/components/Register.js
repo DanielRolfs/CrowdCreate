@@ -3,6 +3,18 @@ import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/aut
 import { auth } from "../.firebase.config"
 import { useState } from "react"
 import { signOut } from "firebase/auth";
+import { db } from "../.firebase.config"
+
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+  doc,
+  addDoc,
+  deleteDoc
+} from "firebase/firestore"
 
 function Register() {
 
@@ -23,10 +35,37 @@ function Register() {
           registerPassword);
         console.log(user)
         /* signOut(auth)  */
+        console.log(user.user.uid)
+
+        handleSubmit()
+        /* Write new registered person in user database */
+      
+
+        const userCollectionRef = collection(db, "tasks")
+        const handleSubmit = e => {
+          e.preventDefault()
+
+
+          addDoc(userCollectionRef, form)
+
+          setForm({
+            taskName: "",
+          })
+        }
+
+
       } catch (error) {
         console.log(error.message);
       }
   }
+
+  const [form, setForm] = useState({
+    uid: user.user.uid,
+    firstName: "Test1",
+  })
+
+
+
 
   return (
   <div>
