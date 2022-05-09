@@ -2,7 +2,6 @@ import { Route, Routes, Link } from "react-router-dom"
 import MainNavigate from "./MainNavigate";
 import MainHeader from "./Elements/mainHeader";
 
-
 import { db, storage } from "../.firebase.config"
 import { useState, useEffect } from "react"
 import { 
@@ -17,7 +16,26 @@ import { ref, uploadBytes } from "firebase/storage"
 import { v4 } from "uuid"
 
 
+
 function ProjectList() {
+  
+  const favorProject = id => {
+    /* const path = document.querySelector('#heart path');
+    console.log(path.getTotalLength()); */
+
+    const heart = document.getElementById('heart');
+
+    /* const likeUnlikePost = function () { */
+      if (heart.classList.contains('like')) {
+        heart.classList.remove('like');
+        heart.classList.add('unlike');
+      } else {
+        heart.classList.remove('unlike');
+        heart.classList.add('like');
+      }
+   /*  } */
+  }
+
     const [projects, setProjects] = useState([])
     const [form, setForm] = useState({
       title: "",
@@ -122,7 +140,11 @@ function ProjectList() {
                   
                   <div className="flex flex-shrink-0 h-48 w-full justify-between items-start p-4 bg-cover bg-[url('https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80')]">
                       <button className="removeProject text-white" onClick={() => removeProject(project.id)}>X</button>
-                      <button className="removeProject"><img src="https://img.icons8.com/ios/50/000000/like--v1.png" /></button>
+                      <button className="removeProject">
+                    <svg id="heart" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" onClick={() => favorProject(project.id)} /*fill="none" */ viewBox="0 0 24 24" /* stroke="currentColor" */ stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      </button>
                   </div>
                   <Link to={`/project/${project.id}`} state={project}>
                     <div className="flex-1 bg-white p-2 flex flex-col justify-between">

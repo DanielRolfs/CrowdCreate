@@ -42,3 +42,54 @@
 body, html { 
   font-family: 'Comfortaa', cursive;;
 }
+
+
+
+#heart{
+  stroke:red;
+  fill: grey;
+  stroke-dasharray: 54;
+  stroke-dasharray: 54;
+}
+
+#heart.like{
+ animation: 1.5s ease-in forwards like;
+}
+
+#heart.unlike{
+ animation: 1.5s linear forwards unlike;
+}
+
+@keyframes like {
+  0% {
+    stroke-dashoffset: 54;
+    fill: grey
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+    fill: grey
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    fill: red;
+  }
+}
+
+@keyframes unlike {
+  0% {
+    stroke-dashoffset: 0;
+    fill: red
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+    fill: grey
+  }
+
+  100% {
+    stroke-dashoffset: 54;
+    fill: grey;
+  }
+}
