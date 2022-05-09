@@ -20,16 +20,15 @@ function Login() {
         );
         navigate('/projectlist')
       console.log(user)
-<<<<<<< HEAD
       console.log(user.user.uid)
-=======
 /*       if (user) {
         if (location.state.from) {
           console.log(location.state.from)
           navigate(location.state.from)
         } 
       }*/
->>>>>>> main
+     
+  /*     const [uid, user.user.uid] = useState("") */
     } catch (error) {
       console.log(error.message);
       alert(error.message);

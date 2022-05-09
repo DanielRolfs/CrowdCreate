@@ -32,6 +32,24 @@ function Register() {
     await signOut(auth)
   }
 
+  /* Write new registered person in user database */
+ /*  const userCollectionRef = collection(db, "users") */
+/*   const handleSubmit = e => {
+    e.preventDefault()
+
+
+    addDoc(userCollectionRef, form)
+
+    setForm({
+      taskName: "",
+    })
+  }
+
+  const [form, setForm] = useState({
+    uid: user.user.uid,
+    firstName: "Test1",
+  }) */
+
   const register = async () => {
       try {
         const user = await createUserWithEmailAndPassword(
@@ -39,39 +57,18 @@ function Register() {
           registerEmail, 
           registerPassword);
         console.log(user)
-<<<<<<< HEAD
         /* signOut(auth)  */
         console.log(user.user.uid)
 
-        handleSubmit()
-        /* Write new registered person in user database */
-      
-
-        const userCollectionRef = collection(db, "users")
-        const handleSubmit = e => {
-          e.preventDefault()
-
-
-          addDoc(userCollectionRef, form)
-
-          setForm({
-            taskName: "",
-          })
-        }
-
-
-=======
+       /*  handleSubmit() */
+    
         logout()
->>>>>>> main
       } catch (error) {
         console.log(error.message);
       }
   }
 
-  const [form, setForm] = useState({
-    uid: user.user.uid,
-    firstName: "Test1",
-  })
+
 
 
 
