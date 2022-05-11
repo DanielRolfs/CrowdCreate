@@ -49,7 +49,7 @@ body, html {
   stroke:red;
   fill: grey;
   stroke-dasharray: 54;
-  stroke-dasharray: 54;
+  stroke-dashoffset: 54;
 }
 
 #heart.like{

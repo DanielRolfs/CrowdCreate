@@ -21,6 +21,7 @@ function Login() {
         navigate('/projectlist')
       console.log(user)
       console.log(user.user.uid)
+      console.log(user.user.email)
 /*       if (user) {
         if (location.state.from) {
           console.log(location.state.from)

@@ -57,7 +57,7 @@ function Register() {
           registerEmail, 
           registerPassword);
         console.log(user)
-        /* signOut(auth)  */
+        
         console.log(user.user.uid)
 
        /*  handleSubmit() */
